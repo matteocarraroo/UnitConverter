@@ -3,27 +3,35 @@ print("This program converts units.")
 
 
 # Function for metric
-def convert_metric(unitfrom, unitto, value1):
-    if unitfrom == "mm" and unitto == "cm":
-        calculation = value1 / 10
-        return calculation
-    elif unitfrom == "mm" and unitto == "m":
-        calculation = value1 / 1000
-        return calculation
-    elif unitfrom == "mm" and unitto == "km":
-        calculation = value1 / 1e+6
-        return calculation
-    elif unitfrom == "mm" and unitto == "nm":
-        calculation = value1 * 1e+6
-        return calculation
-    elif unitfrom == "nm" and unitto == "mm":
-        calculation = value1 / 1e+6
-        return calculation
-available_units = ["nm", "mm", "cm", "m", "km"]
-unitfrom = str(input(f"What unit would you like to convert from? (Please choose between {available_units}): "))
-available_units.remove(unitfrom)
-unitto = str(input(f"What unit would you like to convert to? (Please choose between {available_units}: "))
-value1 = float(input(f"Choose a value in {unitfrom} to convert from: "))
+def convert_metric(unit_from, unit_to, value1):
+    if unit_from == "mm" and unit_to == "cm": calculation = (value1 / 10)
+    if unit_from == "mm" and unit_to == "m": calculation = (value1 / 1000)
+    if unit_from == "mm" and unit_to == "km": calculation = (value1 / 1e+6)
+    if unit_from == "mm" and unit_to == "nm": calculation = (value1 * 1e+6)
+    if unit_from == "nm" and unit_to == "mm": calculation = (value1 / 1e+6)
+    if unit_from == "nm" and unit_to == "cm": calculation = (value1 / 1e+7)
+    if unit_from == "nm" and unit_to == "m": calculation = (value1 / 1e+9)
+    if unit_from == "nm" and unit_to == "km": calculation = (value1 / 1e+12)
+    if unit_from == "cm" and unit_to == "nm": calculation = (value1 * 1e+7)
+    if unit_from == "cm" and unit_to == "mm": calculation = (value1 * 10)
+    if unit_from == "cm" and unit_to == "m": calculation = (value1 / 100)
+    if unit_from == "cm" and unit_to == "km": calculation = (value1 / 100000)
+    if unit_from == "m" and unit_to == "nm": calculation = (value1 * 1e+9)
+    if unit_from == "m" and unit_to == "mm": calculation = (value1 * 1000)
+    if unit_from == "m" and unit_to == "cm": calculation = (value1 * 100)
+    if unit_from == "m" and unit_to == "km": calculation = (value1 / 1000)
+    if unit_from == "km" and unit_to == "nm": calculation = (value1 * 1e+12)
+    if unit_from == "km" and unit_to == "mm": calculation = (value1 * 1e+6)
+    if unit_from == "km" and unit_to == "cm": calculation = (value1 * 100000)
+    if unit_from == "km" and unit_to == "m": calculation = (value1 * 1000)
+    return calculation
 
-result = convert_metric(unitfrom, unitto, value1)
-print(f"The result is {result}")
+
+available_units = ["nm", "mm", "cm", "m", "km"]
+unit_from = str(input(f"What unit would you like to convert from? (Please choose between {available_units}): "))
+available_units.remove(unit_from)
+unit_to = str(input(f"What unit would you like to convert to? (Please choose between {available_units}: "))
+value1 = float(input(f"Choose a value in {unit_from} to convert from: "))
+
+result = convert_metric(unit_from, unit_to, value1)
+print(f"The result is {result}{unit_to}")
