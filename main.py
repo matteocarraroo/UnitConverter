@@ -36,7 +36,7 @@ def convert_temperature(unit_from, unit_to, value1):
     return calculation
 
 
-available_units = ["nm", "mm", "cm", "m", "km", ""]
+available_units = ["nm", "mm", "cm", "m", "km", "celsius", "fahrenheit", "kelvin"]
 unit_from = str(input(f"What unit would you like to convert from? (Please choose between {available_units}): "))
 available_units.remove(unit_from)
 unit_to = str(input(f"What unit would you like to convert to? (Please choose between {available_units}: "))
