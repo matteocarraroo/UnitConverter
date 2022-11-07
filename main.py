@@ -50,7 +50,7 @@ def convert_volume(unit_from, unit_to, value1):
 
 available_units_metric = ["nm", "mm", "cm", "m", "km"]
 available_units_temp = ["celsius", "fahrenheit", "kelvin"]
-available_units_metric = ["cm3", "m3", "km3"]
+available_units_volume = ["cm3", "m3", "km3"]
 
 #User chooses scale (temp, vol, metric
 scale = str(input(f"Would you like to convert from/to temperature, metric or volume? "))
@@ -122,3 +122,6 @@ if scale == "volume":
 #Prevent user from choosing out of bound values
 else:
     print("Please choose between 'temperature', 'metric' or 'volume'.")
+
+
+
